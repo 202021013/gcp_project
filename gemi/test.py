@@ -1,11 +1,8 @@
-import os
 import vertexai
 from vertexai.preview.generative_models import GenerativeModel, Part
 import vertexai.preview.generative_models as generative_models
 
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "key.json"
-
-location = "us-central1"
+location = ""
 project_id = ""
 vertexai.init(project=project_id, location=location)
 

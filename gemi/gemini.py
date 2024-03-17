@@ -1,6 +1,5 @@
 # generative_model.py
 import base64
-import os
 import vertexai
 from vertexai.preview.generative_models import GenerativeModel, Part
 
@@ -12,8 +11,7 @@ def load_image_from_local(file_path):
     return Part.from_data(data=base64.b64decode(encoded_image_data), mime_type=mime_type)
 
 def generate_summary(image_data):
-    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "key.json"
-    vertexai.init(project="", location="us-central1")
+    vertexai.init(project="", location="")
 
     image = Part.from_data(data=base64.b64decode(image_data), mime_type='image/jpeg')
 
